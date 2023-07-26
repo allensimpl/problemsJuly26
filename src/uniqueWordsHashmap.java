@@ -2,16 +2,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
 
-//public class uniqueWordsHashmap {
-//    public static void main(String[] args){
-//        HashMap<String,Integer> h = new HashMap<String,Integer>();
-//        h.put("Allen",9);
-//        h.put("Aaron",12);
-//        h.put("Arlington",18);
-//        System.out.println(h);
-//        System.out.println(h.get("Allen"));
-//    }
-//}
 
 
 public class uniqueWordsHashmap {
@@ -41,23 +31,6 @@ public class uniqueWordsHashmap {
                 count++;
             }
         }
-
-//        for(String i:allWords){
-//            int flag = 1;
-////          System.out.println(i);
-//            for(String j:allWords){
-//                if(i==j){
-//                    continue;
-//                }
-//                if(i.equals(j)){
-//                    flag = 0;
-//                    break;
-//                }
-//            }
-//            if(flag == 1){
-//                count++;
-//            }
-//        }
         return count;
     }
     public static ArrayList<String> addAllWords(String sentence){
