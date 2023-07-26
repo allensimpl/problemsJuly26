@@ -16,7 +16,6 @@ public class substringStartingIndex {
             if(flag == 1){
                 System.out.println(i);
             }
-
         }
     }
 }

@@ -1,10 +1,21 @@
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.Hashtable;
-import java.util.List;
+import java.util.HashMap;
 import java.util.Scanner;
-public class uniqueWords {
-    public static String sliceWord(String word,int start, int end){
+
+//public class uniqueWordsHashmap {
+//    public static void main(String[] args){
+//        HashMap<String,Integer> h = new HashMap<String,Integer>();
+//        h.put("Allen",9);
+//        h.put("Aaron",12);
+//        h.put("Arlington",18);
+//        System.out.println(h);
+//        System.out.println(h.get("Allen"));
+//    }
+//}
+
+
+public class uniqueWordsHashmap {
+        public static String sliceWord(String word,int start, int end){
         int n = (end-start)+1;
         char[] newWord = new char[n];
         int i=0;
@@ -16,24 +27,37 @@ public class uniqueWords {
         return finalWord;
     }
     public static int findUniqueWordCount(ArrayList<String> allWords){
-        String uniqueString = "";
         int count=0;
+        HashMap<String,Integer> wordCounts = new HashMap<String,Integer>();
         for(String i:allWords){
-            int flag = 1;
-//            System.out.println(i);
-            for(String j:allWords){
-                if(i==j){
-                    continue;
-                }
-                if(i.equals(j)){
-                    flag = 0;
-                    break;
-                }
+            if(wordCounts.containsKey(i)){
+                wordCounts.put(i,wordCounts.get(i)+1);
+            }else{
+                wordCounts.put(i,1);
             }
-            if(flag == 1){
+        }
+        for(Integer i: wordCounts.values()){
+            if (i <= 1) {
                 count++;
             }
         }
+
+//        for(String i:allWords){
+//            int flag = 1;
+////          System.out.println(i);
+//            for(String j:allWords){
+//                if(i==j){
+//                    continue;
+//                }
+//                if(i.equals(j)){
+//                    flag = 0;
+//                    break;
+//                }
+//            }
+//            if(flag == 1){
+//                count++;
+//            }
+//        }
         return count;
     }
     public static ArrayList<String> addAllWords(String sentence){
